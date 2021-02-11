@@ -1,22 +1,21 @@
-$color-one: #cdcdcd;
+// Color vars
+$color-one: #e0e0e0;
+$color-two: #0053ab;
 $color-background-one: $color-one;
+$color-link: $color-two;
+
+// Breakpoint vars
 $bp-md: 768px;
+
+// Spacing vars
 $unit: 8px;
 
 // Timing vars
-$animation-timing-short: 0.5s;
-$animation-timing-default: 1s;
-$animation-timing-long: 2s;
-
-// Transition vars
-// $transition-timing-default: 0.5s;
-// $transition-timing-long: 1s;
+$animation-timing-short: 250ms;
 
 // Reusable animation mixins
 @mixin animate-fade-in($duration) {
-  // animation: animate-fade-in $animation-timing-short linear forwards;
   animation: animate-fade-in $animation-timing-short linear forwards;
-  // transition: all $duration 1s;
   transition: all $duration;
 
   @keyframes animate-fade-in {
@@ -30,6 +29,12 @@ $animation-timing-long: 2s;
   }
 }
 
+// Link styling
+a {
+  color: $color-link;
+}
+
+// Table styling
 table {
   min-width: $bp-md;
   width: 100%;
@@ -37,37 +42,59 @@ table {
 
 tr:hover {
   background-color: $color-background-one;
+  transition: background-color $animation-timing-short linear;
 }
 
 .table__container {
-  // border: 3px solid red;
   overflow-x: auto;
 }
 
-td {
-  padding-left: $unit;
+td.mat-cell {
+  padding-left: $unit; // Overriding Angular Material styling
+  padding-right: $unit; // Overriding Angular Material styling
   position: relative;
 }
 
-.td__link {
+td:focus {
+  outline: none;
+}
+
+.td__inner {
   align-items: center;
-  // background-color: yellow;
   bottom: 0;
   display: inline-flex;
-  // justify-content: center;
+  justify-content: space-between;
   left: 0;
+  min-width: 60px;
   opacity: 0;
-  // pointer-events: none;
   padding-left: $unit;
+  padding-right: $unit;
   position: absolute;
   right: 0;
   top: 0;
-  // @include animate-fade-in($animation-timing-default);
+  z-index: 1;
+
+  @media (min-width: $bp-md) {
+    min-width: 80px;
+  }
 }
 
-.td__link:hover {
-  // opacity: 1;
-  background-color: yellow;
+.td__inner:hover,
+td:focus .td__inner {
+  background-color: #cacaca;
   @include animate-fade-in($animation-timing-short);
-  // pointer-events: initial;
+}
+
+.td__link-text {
+  display: none;
+  @media (min-width: $bp-md) {
+    display: inline;
+  }
+}
+
+.td__link-icon {
+  display: inline;
+  @media (min-width: $bp-md) {
+    display: none;
+  }
 }

@@ -1,84 +1,303 @@
 <div [className]="'table__container'">
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  <!--- Note that these columns can be defined in any order.
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
 
-  <!-- Number Column -->
-  <ng-container matColumnDef="number">
-    <th mat-header-cell *matHeaderCellDef>#</th>
-    <td mat-cell *matCellDef="let element">{{ element.number }}</td>
-  </ng-container>
+    <!-- Number Column -->
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+      <td mat-cell *matCellDef="let element">{{ element.number }}</td>
+    </ng-container>
 
-  <!-- Date Column -->
-  <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef>Appointment date</th>
-    <td mat-cell *matCellDef="let element">{{ element.date }}<a [className]="'td__link'" href="#">Edit</a></td>
-  </ng-container>
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Appointment date</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.date }}
+        <span [className]="'td__inner'">
+          <a tabindex="-1" [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'"> Edit </span>
+            <span [className]="'td__link-icon'">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                />
+              </svg>
+            </span>
+          </a>
+          <a tabindex="-1" [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'"> Delete </span>
+            <span [className]="'td__link-icon'">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                />
+              </svg>
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- Site Column -->
-  <ng-container matColumnDef="site">
-    <th mat-header-cell *matHeaderCellDef>Site</th>
-    <td mat-cell *matCellDef="let element">{{ element.site }}</td>
-  </ng-container>
+    <!-- Site Column -->
+    <ng-container matColumnDef="site">
+      <th mat-header-cell *matHeaderCellDef>Site</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.site }}
+        <span [className]="'td__inner'">
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'"> Edit </span>
+            <span [className]="'td__link-icon'">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                />
+              </svg>
+            </span>
+          </a>
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'"> Delete </span>
+            <span [className]="'td__link-icon'">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+                />
+              </svg>
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- With Column -->
-  <ng-container matColumnDef="with">
-    <th mat-header-cell *matHeaderCellDef>With</th>
-    <td mat-cell *matCellDef="let element">{{ element.with }}</td>
-  </ng-container>
+    <!-- With Column -->
+    <ng-container matColumnDef="with">
+      <th mat-header-cell *matHeaderCellDef>With</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.with }}
+        <span [className]="'td__inner'">
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Edit
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>								
+            </span>
+          </a>
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Delete
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>								
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- Dur Column -->
-  <ng-container matColumnDef="dur">
-    <th mat-header-cell *matHeaderCellDef>Dur</th>
-    <td mat-cell *matCellDef="let element">{{ element.dur }}</td>
-  </ng-container>
+    <!-- Dur Column -->
+    <ng-container matColumnDef="dur">
+      <th mat-header-cell *matHeaderCellDef>Dur</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.dur }}
+        <span [className]="'td__inner'">
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Edit
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>								
+            </span>
+          </a>
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Delete
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>								
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- Status Column -->
-  <ng-container matColumnDef="status">
-    <th mat-header-cell *matHeaderCellDef>Status</th>
-    <td mat-cell *matCellDef="let element">{{ element.status }}</td>
-  </ng-container>
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.status }}
+        <span [className]="'td__inner'">
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Edit
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>								
+            </span>
+          </a>
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Delete
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>								
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- Claim no Column -->
-  <ng-container matColumnDef="claimNo">
-    <th mat-header-cell *matHeaderCellDef>Claim no</th>
-    <td mat-cell *matCellDef="let element">{{ element.claimNo }}</td>
-  </ng-container>
+    <!-- Claim no Column -->
+    <ng-container matColumnDef="claimNo">
+      <th mat-header-cell *matHeaderCellDef>Claim no</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.claimNo }}
+        <span [className]="'td__inner'">
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Edit
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>								
+            </span>
+          </a>
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Delete
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>								
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- Exam Column -->
-  <ng-container matColumnDef="exam">
-    <th mat-header-cell *matHeaderCellDef>Exam</th>
-    <td (mouseenter)="appendElement()" mat-cell #h *matCellDef="let element">{{ element.exam }}</td>
-  </ng-container>
+    <!-- Exam Column -->
+    <ng-container matColumnDef="exam">
+      <th mat-header-cell *matHeaderCellDef>Exam</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.exam }}
+        <span [className]="'td__inner'">
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Edit
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>								
+            </span>
+          </a>
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Delete
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>								
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- Charge Column -->
-  <ng-container matColumnDef="charge">
-    <th mat-header-cell *matHeaderCellDef>Charge</th>
-    <td [className]="'one, mat-cell'" #h  *matCellDef="let element">{{ element.charge }}</td>
-  </ng-container>
+    <!-- Charge Column -->
+    <ng-container matColumnDef="charge">
+      <th mat-header-cell *matHeaderCellDef>Charge</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.charge }}
+        <span [className]="'td__inner'">
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Edit
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>								
+            </span>
+          </a>
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Delete
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>								
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- Invoiced Column -->
-  <ng-container matColumnDef="invoiced">
-    <th mat-header-cell *matHeaderCellDef>Invoiced</th>
-    <td class="what" (mouseenter)="addElement()" (mouseleave)="removeElement()" mat-cell #link *matCellDef="let element">{{ element.invoiced }}</td>
-  </ng-container>
+    <!-- Invoiced Column -->
+    <ng-container matColumnDef="invoiced">
+      <th mat-header-cell *matHeaderCellDef>Invoiced</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.invoiced }}
+        <span [className]="'td__inner'">
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Edit
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>								
+            </span>
+          </a>
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Delete
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>								
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <!-- Paid/WO Column -->
-  <ng-container matColumnDef="paidWo">
-    <th mat-header-cell *matHeaderCellDef>Paid/WO</th>
-    <td (mouseenter)="addElement()" (mouseleave)="removeElement()" mat-cell #link *matCellDef="let element">{{ element.paidWo }}</td>
-  </ng-container>
+    <!-- Paid/WO Column -->
+    <ng-container matColumnDef="paidWo">
+      <th mat-header-cell *matHeaderCellDef>Paid/WO</th>
+      <td tabindex="0" mat-cell *matCellDef="let element">
+        {{ element.paidWo }}
+        <span [className]="'td__inner'">
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Edit
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>								
+            </span>
+          </a>
+          <a [className]="'td__link'" href="#">
+            <span [className]="'td__link-text'">
+              Delete
+            </span>
+            <span [className]="'td__link-icon'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>								
+            </span>
+          </a>
+        </span>
+      </td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 </div>
-<ul>
-
-  <li #studentID *ngFor="let student of students" [attr.data-id]="student.id">
-
-    <button (click)="clickEvent(studentID)">{{ student.name }}</button>
-
-  </li>
-
-</ul>
