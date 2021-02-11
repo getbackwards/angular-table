@@ -24,11 +24,11 @@ const ELEMENT_DATA: PeriodicElement[] = [
  * @title Basic use of `<table mat-table>`
  */
 @Component({
-  selector: 'table-basic-example',
-  styleUrls: ['table-basic-example.scss'],
-  templateUrl: 'table-basic-example.html',
+  selector: 'table-component',
+  styleUrls: ['table.component.scss'],
+  templateUrl: 'table.component.html',
 })
-export class TableBasicExample {
+export class TableComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
 }

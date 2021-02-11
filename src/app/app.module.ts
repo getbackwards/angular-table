@@ -7,12 +7,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { TableBasicExample } from './table/table.component';
 // import { TableComponent } from './table/table.component';
-import { TableBasicExample } from './table/table-basic-example';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableBasicExample
+    TableComponent
   ],
   imports: [
     BrowserModule,
