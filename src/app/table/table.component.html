@@ -1,3 +1,4 @@
+<div [className]="'table__container'">
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -11,7 +12,7 @@
   <!-- Date Column -->
   <ng-container matColumnDef="date">
     <th mat-header-cell *matHeaderCellDef>Appointment date</th>
-    <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+    <td mat-cell *matCellDef="let element">{{ element.date }}<a [className]="'td__link'" href="#">Edit</a></td>
   </ng-container>
 
   <!-- Site Column -->
@@ -47,35 +48,37 @@
   <!-- Exam Column -->
   <ng-container matColumnDef="exam">
     <th mat-header-cell *matHeaderCellDef>Exam</th>
-    <td mat-cell *matCellDef="let element">{{ element.exam }}</td>
+    <td (mouseenter)="appendElement()" mat-cell #h *matCellDef="let element">{{ element.exam }}</td>
   </ng-container>
 
   <!-- Charge Column -->
   <ng-container matColumnDef="charge">
     <th mat-header-cell *matHeaderCellDef>Charge</th>
-    <td mat-cell *matCellDef="let element">{{ element.charge }}</td>
+    <td [className]="'one, mat-cell'" #h  *matCellDef="let element">{{ element.charge }}</td>
   </ng-container>
 
   <!-- Invoiced Column -->
   <ng-container matColumnDef="invoiced">
     <th mat-header-cell *matHeaderCellDef>Invoiced</th>
-    <td mat-cell *matCellDef="let element">{{ element.invoiced }}</td>
+    <td class="what" (mouseenter)="addElement()" (mouseleave)="removeElement()" mat-cell #link *matCellDef="let element">{{ element.invoiced }}</td>
   </ng-container>
 
   <!-- Paid/WO Column -->
   <ng-container matColumnDef="paidWo">
     <th mat-header-cell *matHeaderCellDef>Paid/WO</th>
-    <!-- <td mat-cell *matCellDef="let element">{{ element.paidWo }}</td> -->
-    <td (mouseenter) ="tdEnter(td) " [innerHtml]="htmlToAdd" mat-cell *matCellDef="let element">{{ element.paidWo }}</td>
+    <td (mouseenter)="addElement()" (mouseleave)="removeElement()" mat-cell #link *matCellDef="let element">{{ element.paidWo }}</td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
-
-<div (mouseenter) ="mouseEnter('div a') "  (mouseleave) ="mouseLeave('div A')">
-  <h2>Div A</h2>
-</div> 
-<div (mouseenter) ="mouseEnter('div b')"  (mouseleave) ="mouseLeave('div B')">
-  <h2>Div B</h2>
 </div>
+<ul>
+
+  <li #studentID *ngFor="let student of students" [attr.data-id]="student.id">
+
+    <button (click)="clickEvent(studentID)">{{ student.name }}</button>
+
+  </li>
+
+</ul>
