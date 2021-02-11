@@ -33,6 +33,27 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class TableComponent {
   displayedColumns: string[] = ['number', 'date', 'site', 'with', 'dur', 'status', 'claimNo', 'exam', 'charge', 'invoiced', 'paidWo'];
   dataSource = ELEMENT_DATA;
+
+  htmlToAdd;
+
+  td;
+
+  tableRow = document.querySelectorAll('div');
+  // console.log(tableRow);
+
+  mouseEnter(div : string) {
+    console.log("mouse enter : " + div);
+ }
+
+ mouseLeave(div : string){
+   console.log('mouse leave :' + div);
+ }
+
+ tdEnter(td) {
+  console.log("mouse enter : ");
+  this.htmlToAdd = '<div class="two">two</div>';
+}
+  
 }
 
 
