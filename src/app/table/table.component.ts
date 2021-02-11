@@ -1,23 +1,25 @@
 import {Component} from '@angular/core';
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  number: number;
+  date: string;
+  site: string;
+  with: string;
+  dur: number;
+  status: string;
+  claimNo: number;
+  exam: string;
+  charge: string;
+  invoiced: string;
+  paidWo: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {number: 1, date: 'Wed 02/12/20 11:30am', site: 'Putney', with: 'Roy Oven', dur: 30, status: 'Confirmed', claimNo: 1234567, exam: 'Yes', charge: '$0.00', invoiced: '$0.00', paidWo: '$0.00' },
+  {number: 2, date: 'Wed 02/12/20 11:30am', site: 'Putney', with: 'Roy Oven', dur: 30, status: 'Confirmed', claimNo: 1234567, exam: 'Yes', charge: '$0.00', invoiced: '$0.00', paidWo: '$0.00' },
+  {number: 3, date: 'Wed 02/12/20 11:30am', site: 'Putney', with: 'Roy Oven', dur: 30, status: 'Confirmed', claimNo: 1234567, exam: 'Yes', charge: '$0.00', invoiced: '$0.00', paidWo: '$0.00' },
+  {number: 4, date: 'Wed 02/12/20 11:30am', site: 'Putney', with: 'Roy Oven', dur: 30, status: 'Confirmed', claimNo: 1234567, exam: 'Yes', charge: '$0.00', invoiced: '$0.00', paidWo: '$0.00' },
+  {number: 5, date: 'Wed 02/12/20 11:30am', site: 'Putney', with: 'Roy Oven', dur: 30, status: 'Confirmed', claimNo: 1234567, exam: 'Yes', charge: '$0.00', invoiced: '$0.00', paidWo: '$0.00' }
 ];
 
 /**
@@ -29,7 +31,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: 'table.component.html',
 })
 export class TableComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['number', 'date', 'site', 'with', 'dur', 'status', 'claimNo', 'exam', 'charge', 'invoiced', 'paidWo'];
   dataSource = ELEMENT_DATA;
 }
 
