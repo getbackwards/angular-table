@@ -1,6 +1,7 @@
 // Color vars
 $color-one: #e0e0e0;
 $color-two: #0053ab;
+$color-three: #cacaca;
 $color-background-one: $color-one;
 $color-link: $color-two;
 
@@ -91,7 +92,7 @@ td:focus {
 
 .td__inner:hover,
 td:focus .td__inner {
-  background-color: #cacaca;
+  background-color: $color-three;
   @include animate-fade-in($animation-timing-short);
 }
 
