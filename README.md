@@ -1,6 +1,11 @@
 # Test for UI (Angular/Typescript)
 
-I have actually 
+I have done most of this in HTML/CSS.
+
+There are many fancier soultions to responsive tables such as:
+[https://stackblitz.com/edit/material-table-responsive?file=tsconfig.json](https://stackblitz.com/edit/material-table-responsive?file=tsconfig.json), [Materialize Responsive Table](https://materializecss.com/table.html)
+etc. I have implimented a simple solution, here's a [short video showing how it performs on mobile](https://www.youtube.com/watch?v=_FOQenfaD18&ab_channel=freakzombie).
+
 
 # Standard generated README file below
 
